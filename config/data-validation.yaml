@@ -1,0 +1,23 @@
+
+artifact_root: artifacts 
+
+data_validation:
+  root_dir: artifacts/data_validation
+  data_dir: artifacts/data_ingestion/hotel_reservations.parquet
+  val_status: artifacts/data_validation/validation_status.json
+  validated_data: artifacts/data_validation/hotel_val_data.parquet
+  all_schema:
+    type_of_meal_plan: object
+    required_car_parking_space: int64
+    room_type_reserved: object
+    lead_time: int64
+    arrival_month: int64
+    market_segment_type: object
+    repeated_guest: int64
+    no_of_previous_cancellations: int64
+    no_of_previous_bookings_not_canceled: int64
+    avg_price_per_room: float64
+    no_of_special_requests: int64
+    booking_status: object
+    total_guests: int64
+    total_booking_days: int64

@@ -1,0 +1,12 @@
+artifacts_root: artifacts
+
+model_evaluation:
+  root_dir: artifacts/model_evaluation
+  test_feature_path: artifacts/data_transformation/X_test_transformed.joblib
+  test_targets_path: artifacts/data_transformation/y_test.parquet
+  model_path: artifacts/model_trainer/hotel_reservations.joblib
+  eval_scores_path: artifacts/model_evaluation/eval_scores.json #Where the eval_scores needs to be stored
+  classification_report_path: artifacts/model_evaluation/classification_report.txt
+  confusion_matrix_path: artifacts/model_evaluation/confusion_matrix.png
+  roc_curve_path: artifacts/model_evaluation/roc_curve.png
+  pr_curve_path: artifacts/model_evaluation/pr_curve.png

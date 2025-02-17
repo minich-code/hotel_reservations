@@ -1,0 +1,7 @@
+artifacts_root: artifacts 
+
+model_trainer:
+  root_dir: artifacts/model_trainer
+  train_features_path: artifacts/data_transformation/X_train_transformed.joblib
+  train_targets_path: artifacts/data_transformation/y_train.parquet
+  model_name: hotel_reservations.joblib

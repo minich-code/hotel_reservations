@@ -1,0 +1,26 @@
+
+artifacts_root: artifacts
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  data_path: artifacts/data_validation/hotel_val_data.parquet
+  random_state: 42
+  target_col: 'booking_status'
+  numerical_cols:
+    - 'required_car_parking_space'
+    - 'lead_time'
+    - 'arrival_month'
+    - 'repeated_guest'
+    - 'no_of_previous_cancellations'
+    - 'no_of_previous_bookings_not_canceled'
+    - 'avg_price_per_room'
+    - 'no_of_special_requests'
+    - 'total_guests'
+    - 'total_booking_days'
+
+  categorical_cols:
+    - 'type_of_meal_plan'
+    - 'room_type_reserved'
+    - 'market_segment_type'
+
+    

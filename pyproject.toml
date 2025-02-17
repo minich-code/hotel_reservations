@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hotel_reservations"
+version = "0.0.1"
+description = "This is a model to predict if the customer is going to honor the reservation or cancel it."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{ name = "Western", email = "minichworks@gmail.com" }]
+
+keywords = ["hotel", "reservations", "machine learning", "prediction"]
+
+dependencies = [
+  "ensure",
+  "flask",
+  "ipykernel",
+  "joblib",
+  "matplotlib",
+  "numpy",
+  "pandas",
+  "PyYAML",
+  "scikit-learn",
+  "seaborn",
+  "xgboost",
+  "python-box",
+  "ydata-profiling",
+  "pydantic",
+  "pydantic-settings",
+  "pyarrow"  
+]
+
+[project.scripts]
+hotel_reservations = "hotel_reservations.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"] #Changed include to where and added src
+
+[tool.mypy]
+plugins = ["pydantic.mypy"]
