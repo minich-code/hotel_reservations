@@ -29,6 +29,7 @@ class DataTransformationConfig:
     categorical_cols: list
     target_col: str
     random_state: int
+    test_size: float
 
 # Model Training 
 

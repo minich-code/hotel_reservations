@@ -1,6 +1,6 @@
 
 import sys
-sys.path.append('/home/western/DS_Projects/hotel_reservations')
+sys.path.append('/home/western/ds_projects/hotel_reservations')
 
 from dataclasses import dataclass
 from pathlib import Path

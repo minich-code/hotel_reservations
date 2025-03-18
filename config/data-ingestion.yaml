@@ -4,7 +4,7 @@ artifacts_root: artifacts # Root directory for all artifacts
 
 data_ingestion:
   root_dir: artifacts/data_ingestion # Directory to store ingested data
-  source_file: /home/western/Documents/Data/cleaned_hotel_reservations_data.csv # Full path to the CSV data file.  ***REPLACE THIS***
+  source_file: /home/western/Documents/Documents/Data/cleaned_hotel_reservations_data.csv # Full path to the CSV data file.  ***REPLACE THIS***
   output_file: hotel_reservations.parquet # Name of the output file (will be saved in root_dir)
 
 

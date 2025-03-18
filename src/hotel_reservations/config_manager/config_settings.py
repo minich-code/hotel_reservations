@@ -87,7 +87,8 @@ class ConfigurationManager:
                 numerical_cols=transformation_config['numerical_cols'],
                 categorical_cols=transformation_config['categorical_cols'],
                 target_col=transformation_config['target_col'],
-                random_state=transformation_config['random_state']
+                random_state=transformation_config['random_state'],
+                test_size=transformation_config['test_size']
             )
             return data_transformation_config
         except Exception as e:

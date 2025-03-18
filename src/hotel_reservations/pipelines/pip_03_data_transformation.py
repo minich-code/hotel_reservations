@@ -1,9 +1,8 @@
 
 
 
-
 import sys
-sys.path.append('/home/western/DS_Projects/hotel_reservations')
+sys.path.append('/home/western/ds_projects/hotel_reservations')
 
 from src.hotel_reservations.logger import logger
 from src.hotel_reservations.exception import CustomException

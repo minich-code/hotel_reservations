@@ -1,15 +1,13 @@
 
 import sys
-sys.path.append('/home/western/DS_Projects/hotel_reservations')
+sys.path.append('/home/western/ds_projects/hotel_reservations')
 
-import sys
 
 from dataclasses import dataclass
 from pathlib import Path
 import pandas as pd
 import joblib
-import os
-import yaml
+
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, OneHotEncoder, LabelEncoder
@@ -31,6 +29,7 @@ class DataTransformationConfig:
     categorical_cols: list
     target_col: str
     random_state: int
+    test_size: float
 
 class ConfigurationManager:
     def __init__(self, data_preprocessing_config: str = DATA_TRANSFORMATION_CONFIG_FILEPATH):
@@ -53,8 +52,10 @@ class ConfigurationManager:
                 numerical_cols=transformation_config['numerical_cols'],
                 categorical_cols=transformation_config['categorical_cols'],
                 target_col=transformation_config['target_col'],
-                random_state=transformation_config['random_state']
-            )
+                random_state=transformation_config['random_state'],
+                test_size = transformation_config['test_size']
+                )
+            
             return data_transformation_config
         except Exception as e:
             logger.exception(f"Error getting Data Transformation config: {e}")
@@ -105,7 +106,7 @@ class DataTransformation:
                 logger.error(f"Error reading Parquet file: {e}")
                 raise CustomException(f"Error reading Parquet file: {e}", sys)
 
-            # Split into features (X) and target (y)
+            # Define features (X) and target (y)
             X = df.drop(self.config.target_col, axis=1)
             y = df[self.config.target_col]
 
@@ -116,7 +117,7 @@ class DataTransformation:
 
             # Split data into training and test sets
             X_train, X_test, y_train, y_test = train_test_split(
-                X, y, test_size=0.2, stratify=y, random_state=self.config.random_state
+                X, y, test_size=self.config.test_size, stratify=y, random_state=self.config.random_state
             )
 
             logger.info("Data splitting completed.")

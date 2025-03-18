@@ -6,6 +6,7 @@ data_transformation:
   data_path: artifacts/data_validation/hotel_val_data.parquet
   random_state: 42
   target_col: 'booking_status'
+  test_size: 0.2
   numerical_cols:
     - 'required_car_parking_space'
     - 'lead_time'
